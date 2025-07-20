@@ -1,1 +1,3 @@
+full site coming soon...
+
 # skennycomedy.github.io
