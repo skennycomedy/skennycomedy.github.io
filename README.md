@@ -1,3 +1,2 @@
-full site coming soon...
-
-# skennycomedy.github.io
+# skenny24.github.io
+for use with pages

@@ -1,0 +1,28 @@
+{
+  "name": "portfolio-site",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@rasahq/rasa-webchat": "^0.0.11",
+    "@react-three/drei": "^10.0.5",
+    "@react-three/fiber": "^9.1.0",
+    "autoprefixer": "^10.4.21",
+    "axios": "^1.8.4",
+    "next": "15.2.4",
+    "postcss": "^8.5.3",
+    "rasa-webchat": "^1.0.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "three": "^0.175.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "tailwindcss": "^4.0.17"
+  }
+}
