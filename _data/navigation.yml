@@ -1,4 +1,6 @@
-- name: Portfolio
-  link: /
-- name: About
+- name: instagram
+  link: https://instagram.com/skennycomedy
+- name: x
+  link: https://x.com/skennycomedy
+- name: bio
   link: /about.html
