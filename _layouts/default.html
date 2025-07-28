@@ -12,7 +12,7 @@
 		<nav class="nav">contact: 
 		    <a href="mailto:skennycomedy@gmail.com" class="contact-links">skennycomedy@gmail.com</a>		
 		    {% for item in site.data.navigation %}
-		    <!-- a href="{{ item.link }}" class="{% if page.url == item.link %}current{% endif %}">{{ item.name }}</a -->
+		    <a href="{{ item.link }}" class="{% if page.url == item.link %}current{% endif %}">{{ item.name }}</a>
 		    {% endfor %}
 		</nav>
 	    </div>
