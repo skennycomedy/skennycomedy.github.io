@@ -2,6 +2,7 @@ body {
   background-color: #111109;
   color: #fff;
   font-family: sans-serif;
+  padding-top: 80px; /* Adjust this based on your actual header height */
 }
 
 a {
@@ -84,10 +85,25 @@ code {
 
 /* Layout styles below remain unchanged */
 
+/*
 .site-header {
   background-color: #808080;
   padding: 1em;
 }
+*/
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #444422; /* ensure background stays solid while scrolling */
+  padding: 1em;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+
 
 .nav a {
   color: #fff;
