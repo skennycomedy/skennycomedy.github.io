@@ -1,39 +1,50 @@
-- date: MAR 16
+- date: OCT 04
+  venue: just the funny
+  location: miami, FL
+  link: ""
+
+- date: OCT 18
+  venue: boca black box 2.0
+  location: boca raton, FL
+  link: ""
+
+- date: SEP 14
   venue: redlight
-  location: west palm beach FL
+  location: west palm beach, FL
   link: https://redlightpb.com/reservations/
 
-- date: MAR 29
-  venue: 335 capone
-  location: west palm beach FL
-  link:
+- date: AUG 11
+  venue: comedy project
+  location: grand rapids, MI
+  link: ""
+
+- date: AUG 4
+  venue: comedy bar
+  location: chicago, IL
+  link: ""
+
+- date: JUL 9
+  venue: vape queen
+  location: davie, FL
+  link: https://www.eventbrite.com/e/puff-puff-passthe-mic-comedy-night-tickets-1444334345909
+
+- date: JUN 29
+  venue: redlight
+  location: west palm beach, FL
+  link: https://redlightpb.com/reservations/
 
 - date: JUN 28
   venue: island city stage
   location: wilton manors, FL
   link: https://boxoffice.islandcitystage.org/
 
-- date: JUN 29
+- date: MAR 29
+  venue: 335 capone
+  location: west palm beach, FL
+  link: ""
+
+- date: MAR 16
   venue: redlight
-  location: west palm beach FL
+  location: west palm beach, FL
   link: https://redlightpb.com/reservations/
 
-- date: JUL 9
-  venue: vape queen
-  location: davie FL
-  link: https://www.eventbrite.com/e/puff-puff-passthe-mic-comedy-night-tickets-1444334345909
-
-- date: AUG 4
-  venue: comedy bar
-  location: chicago IL
-  link:
-
-- date: AUG 11
-  venue: comedy project
-  location: grand rapids MI
-  link:
-
-- date: SEP 14
-  venue: redlight
-  location: west palm beach FL
-  link: https://redlightpb.com/reservations/
