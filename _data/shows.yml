@@ -1,12 +1,10 @@
-- date: OCT 04
-  venue: just the funny
-  location: miami, FL
-  link: ""
-
 - date: OCT 18
   venue: boca black box 2.0
   location: boca raton, FL
-  link: ""
+
+- date: OCT 04
+  venue: just the funny
+  location: miami, FL
 
 - date: SEP 14
   venue: redlight
@@ -21,7 +19,6 @@
 - date: AUG 4
   venue: comedy bar
   location: chicago, IL
-  link: ""
 
 - date: JUL 9
   venue: vape queen
@@ -41,7 +38,6 @@
 - date: MAR 29
   venue: 335 capone
   location: west palm beach, FL
-  link: ""
 
 - date: MAR 16
   venue: redlight
