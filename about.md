@@ -20,6 +20,20 @@ some festivals i’ve done: SF sketchfest, san diego comedy festival, laughfest
 
 # PREVIOUS SHOWS
 
+## 2025
+
+11/03 14 north daiquiri bar, dania beach FL  
+10/30 boca black box 2.0, boca raton FL  
+10/04 just the funny, miami FL  
+09/14 redlight, west palm beach FL  
+08/11 comedy project, grand rapids MI  
+08/04 comedy bar, chicago IL  
+07/09 vape queen, davie FL  
+06/29 redlight, west palm beach FL  
+06/28 island city stage, wilton manors FL  
+03/29 335 capone, west palm beach FL  
+03/16 redlight, west palm beach FL  
+
 ## 2024
 
 02/28 la mexicana, wilton manors FL  
@@ -461,4 +475,4 @@ some festivals i’ve done: SF sketchfest, san diego comedy festival, laughfest
 12/19/2014 9:00pm loft ensemble theater, downtown los angeles CA  
 12/20/2014 8:00pm clown museum, downtown los angeles CA  
 
-
+-
