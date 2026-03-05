@@ -8,7 +8,7 @@ i’ve been doing standup for about 10 years, mostly in LA, but recently relocat
 
 co-creator of sober not sober, a monthly show at the westside comedy theater
 
-in 2016 & 2017 i produced & performed in a weekly variety show (aka circus of madness) called show up go up LA at the comedy store, available here on periscope (remember periscope?!)
+in 2016 & 2017 i produced & performed in a weekly variety show (aka circus of madness) called show up go up LA at the comedy store
 
 in 2016 i produced & performed in a monthly show in downtown LA called cabaret bodega with local & touring musicians & comedians.
 
