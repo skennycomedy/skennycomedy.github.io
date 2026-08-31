@@ -260,7 +260,8 @@ code {
   }
 
   .header-text {
-    font-size: 1.25em;
+    font-size: clamp(1em, 5vw, 1.25em);
+    white-space: nowrap;
   }
 
   .nav {
