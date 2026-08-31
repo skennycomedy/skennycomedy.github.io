@@ -99,6 +99,7 @@ code {
   top: 0;
   left: 0;
   width: 100%;
+  box-sizing: border-box;
   z-index: 1000;
   background-color: #444422; /* ensure background stays solid while scrolling */
   padding: 1em;
@@ -259,7 +260,7 @@ code {
   }
 
   .header-text {
-    font-size: 1.5em;
+    font-size: 1.25em;
   }
 
   .nav {
