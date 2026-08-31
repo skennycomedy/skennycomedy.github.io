@@ -1,5 +1,7 @@
-body {
-  background-color: #111109;
+body {showstable td:nth-child(4) {
+  width: 15%;
+  text-align: right;
+}  background-color: #111109;
   color: #fff;
   font-family: sans-serif;
   padding-top: 80px; /* Adjust this based on your actual header height */
@@ -212,13 +214,16 @@ code {
 #showstable {
   width: 100%;
   border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 0.82em;
   margin-top: 0;
 }
 
 #showstable th,
 #showstable td {
-  padding: 0.55em 0.65em;
+  padding: 0.45em 0.35em;
   text-align: left;
+  white-space: nowrap;
   border-bottom: 1px solid #444;
   vertical-align: top;
 }
@@ -233,17 +238,20 @@ code {
 }
 
 #showstable td:nth-child(1) {
-  width: 35%;
+  width: 22%;
+  text-align: left;
 }
 
 #showstable td:nth-child(2) {
   width: 40%;
+  text-align: center;
 }
 
 #showstable td:nth-child(3) {
-  width: 25%;
+  width: 38%;
   text-align: right;
 }
+
 
 @media (max-width: 800px) {
   .intro {
@@ -259,7 +267,8 @@ code {
 .button-link .button {
   background-color: #0af;
   color: #fff;
-  padding: 0.5em 1em;
+  padding: 0.35em 0.45em;
+  font-size: 0.9em;
   border-radius: 6px;
   text-decoration: none;
   display: inline-block;

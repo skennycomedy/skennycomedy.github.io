@@ -21,13 +21,9 @@ title: skennycomedy
 	<tbody>
 	    {% for show in site.data.shows reversed %}
 	    <tr>
-		<td>{{ show.date }}<br>{{ show.venue }}</td>
+		<td>{{ show.date }}</td>
+		<td>{{ show.venue }}</td>
 		<td>{{ show.location }}</td>
-		<td>
-		    {% if show.link %}
-		    <a href="{{ show.link }}" class="button-link"><span class="button">TICKETS</span></a>
-		    {% endif %}
-		</td>
 	    </tr>
 	    {% endfor %}
 	</tbody>
