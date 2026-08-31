@@ -254,13 +254,35 @@ code {
 
 
 @media (max-width: 800px) {
+  body {
+    padding-top: 115px;
+  }
+
+  .header-text {
+    font-size: 1.5em;
+  }
+
+  .nav {
+    line-height: 1.6;
+  }
+
   .intro {
     flex-direction: column;
+    gap: 1.5em;
   }
 
   .show-video,
   .show-dates-table {
     width: 100%;
+  }
+
+  #showstable {
+    font-size: 0.78em;
+  }
+
+  #showstable th,
+  #showstable td {
+    padding: 0.45em 0.2em;
   }
 }
 
