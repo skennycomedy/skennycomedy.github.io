@@ -286,6 +286,17 @@ code {
   #showstable td {
     padding: 0.45em 0.2em;
   }
+
+  #showstable td:nth-child(1) {
+    white-space: nowrap;
+  }
+
+  #showstable td:nth-child(2),
+  #showstable td:nth-child(3) {
+    white-space: normal;
+    overflow-wrap: break-word;
+    line-height: 1.25;
+  }
 }
 
 .button-link .button {
