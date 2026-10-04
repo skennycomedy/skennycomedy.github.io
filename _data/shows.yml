@@ -54,6 +54,10 @@
    venue: MOV fusion bar & grill
    location: sunrise, FL
 
+-  data: AUG 19
+   venue: tallboy
+   location: boca raton, FL  
+
 -  date: AUG 20
    venue: shanks town tavern
    location: cooper city, FL
@@ -73,6 +77,14 @@
 -  date: SEP 28
    venue: island city stage
    location: wilton manors, FL
+
+-  date: OCT 05
+   venue: 14north daiquiri bar
+   location: dania beach, FL
+
+-  data: OCT 07
+   venue: tallboy
+   location: boca raton, FL  
 
 -  date: OCT 15
    venue: hidden speakeasy
