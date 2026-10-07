@@ -1,7 +1,6 @@
 ## What is OwlONE
 
-- FAU brand instance nebulaONE Cloudforce Gen AI platform built MS Azure.
-- use multiple AI models through single interface.
+- nebulaONE Gen AI platform built MS Azure--FAU's instance (OWLS!)
 - FAU SSO--login before event so we have you in system
 - Data stays within FAU's secure Azure environment
 
@@ -9,9 +8,12 @@
 
 - **ONEchat** — default, general-purpose immediate chat
   - Image gen, Web Search, and Data & File Tools are available.
-  - incognito -- paranoid/plot (ONLY FOR ONECHAT)
-  - CAN ASK IT ABT THE PLATFORM--[[QUICK PROMPT]] (doc bot)
+  - CAN ASK IT ABT THE PLATFORM--[[QUICK PROMPT]] (doc bot) -- don't mention api?
   - "+": file uploads, Microsoft 365 sources, canvas, Skills (cover more detail later)
+  --- bottom of chat icons/interaction ---
+  - Execution Details — performance metrics, errs
+  - Regenerate — resends prompt (for model switch)
+  - start playback: if you like being read to
 
 - **Left Nav Panel: -- akin to copilot, chatgpt...
   - **Explore Agents** — Official green check, useful defaults on homepage
@@ -19,11 +21,6 @@
   - **Chats tab** — searchable, exportable history
   - **agents tab** PINNED & RECENT
   
-**Chat Interaction Features:
-  - Execution Details — performance metrics, errs
-  - Regenerate — resends prompt (for model switch)
-  - start playback: if you like being read to
-
 ## AGENTS: official vs personal agents (we'll focus mostly official)
 
 - **official: created by admins -- prefab for promptathon
@@ -50,6 +47,7 @@
       - specific subdomains = targeted responses.
   /// file libs
       - File Libs best, indexed vectorized, super fast -- WE WILL HAVE ALREADY CREATED YOUR LIB (for demo) most file types ok (no code)
+      - max docs -- finds ranks most relevant pics top <max docs>
       - again, meaningful lib description** — this is how the agent decides when to use it
       - If agent has both a File Lib and website, use system instructions to tell the agent which to prefer in which scenario.
 
@@ -58,6 +56,8 @@
       - max response, creativity, verbosity....the defaults reasonable, tweak/test as you go--what the playground is for!
 
  /// connection to external APIs as knowledge sources also availble
+
+....WHEN SEE MULTI AGENT--GO RIGHT INTO SKILLS
 
 /////// CAPABILITIES -- Toggle on/off depending on whats needed -- can always check info bubble as well as doc bot
   - Data & File Tool: analyze data, create charts, spreadsheets, and documents.
