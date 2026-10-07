@@ -19,16 +19,16 @@
   
 ## AGENTS: official vs personal agents (we'll focus official)
 
-**personal: you can do right now, create & share with link
+**personal**: you can do right now, create & share with link
   - knowledge sources: files, websistes, API calls
 
-**official: created by admins -- prefab for promptathon -- more configs avail
+**official**: created by admins -- prefab for promptathon -- more configs avail
 
 ## WALKTHRU: show rather than tell...
 
-[[[ OPEN BUILDER TAB & SHELL TABS ]]]
-  - review what builder gives...AI makes mistakes :)
-[[[ COVER BELOW WHILE BUILDER BUILDING ]]]
+- [[[ OPEN BUILDER TAB & SHELL TABS ]]]
+- review what builder gives...AI makes mistakes :)
+- [[[ COVER BELOW WHILE BUILDER BUILDING ]]]
 
 ### KNOWLEDGE--core of **RAG (Retrieval-Augmented Generation)** — the agent retrieves relevant info from sources and uses to ground responses
 
