@@ -22,13 +22,15 @@ maam_sleep_babycarrots
 gray hair sexy
 senior discount
 roaches american (long pause befor imm)
-counseling + folta
 xian no sex fast x
 800% sex kids leftover priest
+counseling + folta
 spider_fly_flies_seaworld
 interaction
 
+-----
 
+py script that finds closest match then generates the insert statement? should give a fallback option if first doesn't match and also allow me to alter and then give score...maybe a config file with venue and date?
 
 
 period + diva
