@@ -7,10 +7,11 @@ where each line contains a term and a numeric score separated by a comma (e.g. '
 Queries MySQL to find the best match in the jokes table (supporting exact, normalized,
 and fuzzy matching). If no match is found, the new/unmatched string is used directly.
 Generates SQL INSERT statements:
-    insert into (jokeid, score, date, venue) values ('<jokeid>', <score>, '<date>', '<venue>');
+    insert into jokes (jokeid, score, date, venue) values ('<jokeid>', <score>, '<date>', '<venue>');
 
 The venue and date are supplied via command-line arguments.
-The resulting INSERT statements are written to output.txt and printed to the screen.
+The resulting INSERT statements are written to output.sql so they can be piped directly
+into MySQL (e.g., `mysql < output.sql`).
 """
 
 import argparse
@@ -55,40 +56,47 @@ def parse_env_file(filepath=".env.local"):
     return env_vars
 
 
-def get_db_connection(env_file=".env.local"):
-    """
-    Retrieves database credentials from .env.local and environment variables,
-    then establishes and returns a connection.
-    """
+def get_db_credentials(env_file=".env.local"):
+    """Returns database configuration dict from env file and environment variables."""
     env = parse_env_file(env_file)
-
     user = env.get("USER") or os.environ.get("USER")
     password = env.get("PASS") or env.get("PASSWORD") or os.environ.get("PASS") or os.environ.get("PASSWORD")
     db_name = env.get("DB") or env.get("DATABASE") or os.environ.get("DB") or os.environ.get("DATABASE")
     host = env.get("HOST", "127.0.0.1")
     port = int(env.get("PORT", 3306))
+    return {
+        "user": user,
+        "password": password,
+        "database": db_name,
+        "host": host,
+        "port": port,
+    }
 
+
+def get_db_connection(creds):
+    """Establishes and returns a connection based on credentials dict."""
+    user = creds.get("user")
+    db_name = creds.get("database")
     if not user or not db_name:
         print("Error: Database user or database name missing in configuration.", file=sys.stderr)
-        print(f"Checked file: {env_file}", file=sys.stderr)
         sys.exit(1)
 
     if DB_DRIVER == "pymysql":
         return pymysql.connect(
-            host=host,
-            port=port,
+            host=creds.get("host", "127.0.0.1"),
+            port=creds.get("port", 3306),
             user=user,
-            password=password,
+            password=creds.get("password"),
             database=db_name,
             cursorclass=pymysql.cursors.DictCursor,
             charset="utf8mb4",
         )
     else:
         return mysql.connector.connect(
-            host=host,
-            port=port,
+            host=creds.get("host", "127.0.0.1"),
+            port=creds.get("port", 3306),
             user=user,
-            password=password,
+            password=creds.get("password"),
             database=db_name,
             dictionary=True,
         )
@@ -207,7 +215,6 @@ def format_score_literal(score_str):
         return "NULL"
     if score_str.isdigit():
         return score_str
-    # If not pure digits, check float or escape string
     try:
         float(score_str)
         return score_str
@@ -215,11 +222,11 @@ def format_score_literal(score_str):
         return f"'{escape_sql(score_str)}'"
 
 
-def format_insert_sql(jokeid, score_str, date_str, venue, table=""):
+def format_insert_sql(jokeid, score_str, date_str, venue, table="jokes"):
     """
     Formats the SQL INSERT statement.
-    If table is specified (e.g. 'jokes'), generates 'insert into jokes (jokeid, score, date, venue)...'
-    Otherwise generates 'insert into (jokeid, score, date, venue)...'
+    Default table is 'jokes', producing:
+    insert into jokes (jokeid, score, date, venue) values ('<jokeid>', <score>, '<date>', '<venue>');
     """
     table_part = f"{table} " if table else ""
     score_literal = format_score_literal(score_str)
@@ -231,7 +238,7 @@ def format_insert_sql(jokeid, score_str, date_str, venue, table=""):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Query jokes in MySQL and generate SQL INSERT statements for (jokeid, score, date, venue)."
+        description="Query jokes in MySQL and generate executable SQL INSERT statements for output.sql."
     )
     parser.add_argument(
         "venue_pos",
@@ -257,13 +264,19 @@ def main():
     )
     parser.add_argument(
         "-o", "--output",
-        default="output.txt",
-        help="Path to output SQL file (default: output.txt)"
+        default="output.sql",
+        help="Path to output SQL file (default: output.sql)"
     )
     parser.add_argument(
         "--table",
-        default="",
-        help="Optional table name to include after 'insert into' (default: omit table name)"
+        default="jokes",
+        help="Table name to include in 'insert into <table>' (default: 'jokes')"
+    )
+    parser.add_argument(
+        "--use-db",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="Include 'USE <dbname>;' at the top of the SQL file (default: True, use --no-use-db to omit)"
     )
     parser.add_argument(
         "--env",
@@ -306,10 +319,13 @@ def main():
 
     print(f"Connecting to database using settings from '{args.env}'...")
     try:
-        conn = get_db_connection(args.env)
+        creds = get_db_credentials(args.env)
+        conn = get_db_connection(creds)
     except Exception as e:
         print(f"Connection failed: {e}", file=sys.stderr)
         sys.exit(1)
+
+    db_name = creds.get("database")
 
     try:
         with conn.cursor() as cursor:
@@ -319,7 +335,7 @@ def main():
         conn.close()
 
     print(f"Loaded {len(entries)} items from '{args.input}'.")
-    print(f"Venue: '{venue}' | Date: '{target_date}'")
+    print(f"Venue: '{venue}' | Date: '{target_date}' | Target Table: '{args.table}'")
     print(f"Indexed {len(all_jokeids)} distinct jokeids in database.")
     print(f"Processing and generating INSERT statements...\n" + "=" * 80)
 
@@ -363,6 +379,8 @@ def main():
 
     # Write SQL statements to output file
     with open(args.output, "w", encoding="utf-8") as out:
+        if args.use_db and db_name:
+            out.write(f"USE `{escape_sql(db_name)}`;\n\n")
         for stmt in generated_statements:
             out.write(stmt + "\n")
 
